@@ -9,14 +9,32 @@ function eventListeners() {
 }
 
 //Clases
+class Presupuesto {
+    constructor(presupuesto) {
+        this.presupuesto = Number(presupuesto);
+        this.restante = Number(presupuesto);
+        this.gastos = [];
+    }
+}
 
+class UI {
+
+}
+
+//Instanciando
+const ui = new UI();
+
+let presupuesto;
 
 //Funciones
 function preguntarPrespuesto() {
-    const presupuestUsuario = prompt('¿Cual es tu presupuesto?');
-    console.log(presupuestUsuario);
+    const presupuestoUsuario = prompt('¿Cual es tu presupuesto?');
 
-    if(presupuestUsuario === '' || presupuestUsuario === null || isNaN(presupuestUsuario) || presupuestUsuario <=0) {
+    if(presupuestoUsuario === '' || presupuestoUsuario === null || isNaN(presupuestoUsuario) || presupuestoUsuario <=0) {
         window.location.reload();
     }
+
+    presupuesto = new Presupuesto(presupuestoUsuario);
+
+    
 }
