@@ -74,7 +74,7 @@ function agregarGasto(e) {
 
     //Leer info
     const nombre = document.querySelector('#gasto').value;
-    const cantidad = document.querySelector('#cantidad').value;
+    const cantidad = Number(document.querySelector('#cantidad').value);
 
     //Validando
     if(nombre === '' || cantidad === '') {
@@ -87,5 +87,8 @@ function agregarGasto(e) {
         return;
     }
 
-    console.log('Agregando gasto');
+    //Objeto gasto
+    const gasto = { nombre, cantidad, id: Date.now() };
+
+    console.log(gasto);
 }
