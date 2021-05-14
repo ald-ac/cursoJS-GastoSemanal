@@ -20,7 +20,6 @@ class Presupuesto {
 
     nuevoGasto(gasto) {
         this.gastos = [...this.gastos, gasto];
-        console.log(this.gastos);
     }
 }
 
@@ -97,4 +96,8 @@ function agregarGasto(e) {
 
     //Agregando un gasto al presupuesto
     presupuesto.nuevoGasto(gasto);
+
+    //Notificando agregado correcto y formulario en blanco
+    ui.imprimirMensaje('Gasto agregado correctamente');
+    formulario.reset();
 }
