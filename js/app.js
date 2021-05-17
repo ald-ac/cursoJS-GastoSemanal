@@ -26,7 +26,6 @@ class Presupuesto {
     calcularRestante() {
         const gastado = this.gastos.reduce( (total, gasto) => total + gasto.cantidad, 0);
         this.restante = this.presupuesto - gastado;
-        console.log(this.restante);
     }
 }
 
@@ -101,6 +100,21 @@ class UI {
             gastoListado.firstChild.remove();
         }
     }
+    
+    comprobarPresupuesto(presupuestoObj) {
+        const { presupuesto, restante } = presupuestoObj;
+
+        const restanteDiv = document.querySelector('.restante');
+
+        //Verificando que restante sea 25% o menos
+        if(restante <= presupuesto*.25) {
+            restanteDiv.classList.remove('alert-success', 'alert-warning');
+            restanteDiv.classList.add('alert-danger');
+        } else if (restante <= presupuesto*.5) {
+            restanteDiv.classList.remove('alert-success');
+            restanteDiv.classList.add('alert-warning');
+        }
+    }
 }
 
 //Instanciando
@@ -155,4 +169,6 @@ function agregarGasto(e) {
     ui.agregarGastoListado(gastos);
 
     ui.actualizarRestante(restante);
+
+    ui.comprobarPresupuesto(presupuesto);
 }
