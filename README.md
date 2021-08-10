@@ -1,4 +1,4 @@
-# Gasto Semanal
+# Gasto Semanal 💰
 Una aplicación web que permite **administrar dinero**, basándose en un presupuesto inicial, lleva el **control de gastos** para mostrar el presupuesto así como un restante. [Probar la app aquí](https://ald-ac.github.io/gastoSemanal/ "Probar la app aquí")
 
 ## Funcionamiento
